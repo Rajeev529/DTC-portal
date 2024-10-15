@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Contact us Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+ <form action="/show_data">
+   <button>show data</button>
+ </form>
+ <h1>{{msg1}}</h1>
+<div class="container">
+      <div class="text">
+         Register Driver
+      </div>
+      <form action="/updatedata" method="post">
+         {% csrf_token %}
+         <div class="form-row">
+            <div class="input-data">
+               <input type="file" required name="pic" value="upload image">
+               
+            </div>
+            <div class="input-data">
+               <input type="text" required name="name" value={{name}}>
+               <div class="underline"></div>
+               <label for="">Name</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="id" value={{id}}>
+               <div class="underline"></div>
+               <label for="">Identity Number</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="contact" value={{contact}}>
+               <div class="underline"></div>
+               <label for="">Contact No</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="email" value={{email}}>
+               <div class="underline"></div>
+               <label for="">Email Address</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="busno" value={{busno}}>
+               <div class="underline"></div>
+               <label for="">Bus Alloted</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="iterm" value={{iterm}}>
+               <div class="underline"></div>
+               <label for="">Initial Terminal</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="fterm" value={{fterm}}>
+               <div class="underline"></div>
+               <label for="">Final Terminal</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="username" value={{username}}>
+               <div class="underline"></div>
+               <label for="">Create Username</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="password" value={{password}}>
+               <div class="underline"></div>
+               <label for="">Create Password</label>
+            </div>
+         </div>
+         <div class="form-row">
+         <div class="input-data textarea">
+            <textarea rows="8" cols="80" required></textarea>
+            <br />
+            <div class="underline"></div>
+            <label for="">Write your message</label>
+            <br />
+            <div class="form-row submit-btn">
+               <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="Update">
+               </div>
+            </div>
+      </form>
+      </div>
+<!-- partial -->
+  
+</body>
+</html>

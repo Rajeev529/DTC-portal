@@ -1,0 +1,39 @@
+{% extends 'driverbase.html' %}
+{% block content %}
+{% csrf_token %}
+<div class="content">
+
+  <table>
+      <h2>All Attendence</h2>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>atendance</th>
+            <th>busno</th>
+            <th>attendence</th>
+            <th>Date</th>
+            <th>slot 1</th>
+            <th>slot 2</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          {% for d in chq %}
+          <tr>
+            <td>{{d.name}}</td>
+            <td>{{d.uid}}</td>
+            <td>{{d.name_p}}</td>
+            <td>{{d.busno}}</td>
+            <td>{{d.bus_p}}</td>
+            <td>{{d.date}}</td>
+            <td>{{d.goingtime}}-{{d.reachtime}}</td>
+            <td>{{d.leavetime}}-{{d.finaltime}}</td>
+          </tr>
+          {% endfor %}
+  
+        </tbody>
+        
+      </table>
+</div>
+{% endblock %}

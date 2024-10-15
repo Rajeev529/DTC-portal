@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style type="text/css">
+    ul{
+        background-color: rgb(148, 148, 148);
+        position: absolute;
+        width: 98px;
+        height: 100%;
+    }
+    p{
+        position: absolute;
+        padding-left: 140px;
+    }
+    .hed{
+        text-align: center;
+    }
+</style>
+<body>
+    <p>
+        
+        <h1 class="hed">Terminal Admin PORTAL</h1>
+        <h2>{{request.session.aname}}</h2>
+        <h2>{{request.session.aid}}</h2>
+        <h2>{{request.session.aemail}}</h2>
+        <h2>{{request.session.aiterm}}</h2>
+    </p>
+    <ul>
+        <li>
+            <a href="">my profile</a>
+        </li>
+        <li>
+            <a href="">logout</a>
+        </li>
+        <li>
+            <a href="/attend?iterm={{request.session.aiterm}}">attendence</a>
+        </li>
+        <li>
+            <a href="/showdriver?iterm={{request.session.aiterm}}">show drivers</a>
+        </li>
+        <li>
+            <a href="/adddriver?iterm={{request.session.aiterm}}">add drivers</a>
+        </li>
+        <li>
+            <a href="/showattend?iterm={{request.session.aiterm}}">Show Attendance</a>
+        </li>
+
+    </ul>
+</body>
+</html>

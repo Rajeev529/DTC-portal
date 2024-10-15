@@ -1,2 +1,0 @@
-# memesite
-# dtc-portal

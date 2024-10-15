@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration or Sign Up form in HTML CSS | CodingLab </title> 
+    <link rel="stylesheet" href="{% static 'terminal_style.css' %}">
+   </head>
+<body>
+  <div class="wrapper">
+    <h2>Terminal Admin Registration</h2>
+    <form action="/register_admin" method="post">
+      {% csrf_token %}
+      <div class="input-box">
+        <input type="text" placeholder="Enter your name" required name="name">
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter your email" required name="email">
+        <p>{{msg}}</p>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Contact" required name="contact">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Create password" required name="password">
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Terminal name" required name="tname">
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="unique id" required name="id">
+      </div>
+      <div class="input-box">
+        <input type="password" placeholder="Confirm password" required name="cpassword">
+        <p style="color: red; font-size: 12px;">{{msg1}}</p>
+      </div>
+      <div class="policy">
+        <input type="checkbox">
+        <h3>I accept all terms & condition</h3>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Register Now">
+      </div>
+      <div class="text">
+        <h3>Already have an account? <a href="#">Login now</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

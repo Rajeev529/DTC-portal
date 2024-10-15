@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Show Attendence</h1>
+        <form action="/chq_attend">
+            <input type="date" name="date" id="">
+            <input type="submit" value="show" id="">
+        </form>
+        <table>
+          <h2>Today Attendence</h2>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>atendance</th>
+                <th>busno</th>
+                <th>attendence</th>
+                <th>Date</th>
+                <th>slot 1</th>
+                <th>slot 2</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {% for i in today %}
+              <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.uid}}</td>
+                <td>{{i.name_p}}</td>
+                <td>{{i.busno}}</td>
+                <td>{{i.bus_p}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.goingtime}}-{{d.reachtime}}</td>
+                <td>{{i.leavetime}}-{{d.finaltime}}</td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+            
+          </table>
+        <table>
+          <h2>All Attendence</h2>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>ID</th>
+                <th>atendance</th>
+                <th>busno</th>
+                <th>attendence</th>
+                <th>Date</th>
+                <th>slot 1</th>
+                <th>slot 2</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              {% for d in chq %}
+              <tr>
+                <td>{{d.name}}</td>
+                <td>{{d.uid}}</td>
+                <td>{{d.name_p}}</td>
+                <td>{{d.busno}}</td>
+                <td>{{d.bus_p}}</td>
+                <td>{{d.date}}</td>
+                <td>{{d.goingtime}}-{{d.reachtime}}</td>
+                <td>{{d.leavetime}}-{{d.finaltime}}</td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+            
+          </table>
+    </center>
+    
+</body>
+</html>

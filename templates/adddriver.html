@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Contact us Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+   <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+ <h1>{{msg1}}</h1>
+<div class="container">
+      <div class="text">
+         Register Driver
+      </div>
+      <form action="/sendtodriver" method="post">
+         {% csrf_token %}
+
+         <p class="msg">{{msg}}</p>
+
+         <div class="form-row">
+            <div class="input-data">
+               <input type="file" required name="pic" value="upload image">
+               
+            </div>
+            <div class="input-data">
+               <input type="text" required name="name" >
+               <div class="underline"></div>
+               <label for="">Name</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="id" >
+               <div class="underline"></div>
+               <label for="">Identity Number</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="contact" >
+               <div class="underline"></div>
+               <label for="">Contact No</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="email" >
+               <div class="underline"></div>
+               <label for="">Email Address</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="busno" >
+               <div class="underline"></div>
+               <label for="">Bus Alloted</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="iterm" readonly value={{request.session.aiterm}}>
+               <div class="underline"></div>
+               
+            </div>
+            <div class="input-data">
+               <input type="text" required name="fterm" >
+               <div class="underline"></div>
+               <label for="">Final Terminal</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="username" >
+               <div class="underline"></div>
+               <label for="">Create Username</label>
+            </div>
+            <div class="input-data">
+               <input type="text" required name="password" >
+               <div class="underline"></div>
+               <label for="">Create Password</label>
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="time" required name="time" >
+               <div class="underline"></div>
+               
+            </div>
+            <div class="input-data">
+               <input type="time" required name="reachtime" >
+               <div class="underline"></div>
+               
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="time" required name="leavetime" >
+               <div class="underline"></div>
+               
+            </div>
+            <div class="input-data">
+               <input type="time" required name="finaltime" >
+               <div class="underline"></div>
+               
+            </div>
+         </div>
+         <div class="form-row">
+            <div class="input-data">
+               <input type="date" required name="date" >
+               <div class="underline"></div>
+               
+            </div>
+            
+         </div>
+         <div class="form-row">
+         <div class="input-data textarea">
+
+            <div class="form-row submit-btn">
+               <div class="input-data">
+                  <div class="inner"></div>
+                  <input type="submit" value="Update">
+               </div>
+            </div>
+      </form>
+      </div>
+<!-- partial -->
+  
+</body>
+</html>

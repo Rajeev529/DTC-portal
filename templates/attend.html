@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Registration or Sign Up form in HTML CSS | CodingLab </title> 
+    <link rel="stylesheet" href="{% static 'terminal_style.css' %}">
+   </head>
+<body>
+  <div class="wrapper">
+    {{msg}}
+    <h2>Drivers Attendence</h2>
+    <form action="/mark_attend" method="post">
+      <input type="date" name="date" id="">
+      {% csrf_token %}
+      <div class="input-box">
+        <input type="text"  required readonly name="iterm" value={{request.session.aiterm}}>
+      </div>
+      <div class="input-box">
+        <input type="text" placeholder="Enter Id..." required name="id">
+      </div>
+      
+      <div class="policy">
+        <input type="radio" value="True" name="forbus">
+        <h3>bus present</h3>
+        <input type="radio" value="False" name="forbus">
+        <h3>bus absent</h3>
+      </div>
+      <div class="policy">
+        <input type="radio" value="True" name="formen">
+        <h3>men present</h3>
+        <input type="radio" value="False" name="formen">
+        <h3>men absent</h3>
+      </div>
+      <div class="input-box button">
+        <input type="Submit" value="Mark attendence">
+      </div>
+      
+    </form>
+  </div>
+</body>
+</html>

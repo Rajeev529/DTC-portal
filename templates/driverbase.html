@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Static Page with Sidebar, Footer, and User ID Card</title>
+    <script src="{% static 'driver.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'driver.css' %}">
+</head>
+<body>
+
+<div class="sidebar">
+    <!-- <input type="text" readonly value="{{request.session.did}}" name="did"> -->
+    <a href="/driverhtml">Home</a>
+    <form action="/driverattend" method="post">
+        {% csrf_token %}
+        <input type="text" readonly value="{{request.session.did}}" name="did" > 
+        <input type="submit" > 
+    </form>
+    <a href="/driverattend?uid={{request.session.did}}">Attendance</a>
+    <a href="/asign">Assigned</a>
+    <a href="#contact">Report</a>
+    <a href="/logoutdriver">Logout</a>
+</div>
+
+{% block content %}
+
+<!-- your html content here -->
+
+{% endblock %}
+<div class="footer">
+    <p>it is dtc portal for drivers</p>
+</div>
+
+</body>
+</html>

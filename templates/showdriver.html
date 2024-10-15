@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+</html>
+<center>
+
+    <table>
+        <h2>All Driver Belong TO These Terminal</h2>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>ID</th>
+              <th>atendance</th>
+              <th>busno</th>
+              <th>attendence</th>
+              <th>Date</th>
+              <th>Terminal</th>
+              <th>slot 1</th>
+              <th>slot 2</th>
+              <th>control</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in chq %}
+            <tr>
+              <td>{{d.name}}</td>
+              <td>{{d.uid}}</td>
+              <td>{{d.name_p}}</td>
+              <td>{{d.busno}}</td>
+              <td>{{d.bus_p}}</td>
+              <td>{{d.date}}</td>
+              <td>{{d.iterm}}</td>
+              <td>{{d.goingtime}}-{{d.reachtime}}</td>
+              <td>{{d.leavetime}}-{{d.finaltime}}</td>
+              <td>
+                  <a href="/delete?id={{d.id}}">delete</a>
+                  <a href="/edit?id={{d.id}}">edit</a>
+              </td>
+            </tr>
+            {% endfor %}
+    
+          </tbody>
+          
+        </table>
+</center>
+</div>
+</body>

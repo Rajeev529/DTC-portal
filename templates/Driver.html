@@ -1,0 +1,25 @@
+{% extends "driverbase.html" %}
+{% block content %}
+
+<div class="content">
+    <h1>Welcome to My Website</h1>
+    <p>This is a simple static page with a sidebar, a footer, and a user ID card.</p>
+    
+    <div class="card">
+        <img src="https://via.placeholder.com/300x200.png?text=User+Image" alt="User Image">
+        <h1>{{request.session.dname}}</h1>
+        <p class="title">{{request.session.demail}}</p>
+        <p>From: {{request.session.diterm}},To: {{request.session.dfterm}} <br> BUS: {{request.session.dbusno}}</p>
+        <div style="margin: 24px 0;">
+            <a href="#"><i class="fa fa-dribbble"></i></a> 
+            <a href="#"><i class="fa fa-twitter"></i></a>  
+            <a href="#"><i class="fa fa-linkedin"></i></a>  
+            <a href="#"><i class="fa fa-facebook"></i></a> 
+        </div>
+        <p><button>Contact</button></p>
+        <p><button class="print-button" onclick="printCard()">Print Card</button></p>
+    </div>
+</div>
+
+{% endblock %}
+
